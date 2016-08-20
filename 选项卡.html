@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				display: none;
+			}
+			.active{
+				background: red;
+			}
+			.box .show{
+				display: block;
+			}
+		</style>
+	</head>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function (){
+//			$('input').click(function (){
+//				$('input').removeClass('active');
+//				$('div').removeClass('show');
+//				$(this).addClass('active');
+//				$('.box').find('div').eq($(this).index()).addClass('show')
+//			})
+				$('input').click(function (){
+					$('input').removeClass('active');
+					$('.box').find('div').hide();
+					$(this).addClass('active');
+					$('.box').find("div").eq($(this).index('input')).show();
+				})
+				
+		})
+	</script>
+	<body>
+		<div class="box">
+			<input type="button" id="" value="1111" class="active"/>
+			<input type="button" id="" value="2222" />
+			<input type="button" id="" value="3333" />
+			<div class="div1 show">1111</div>
+			<div class="div2">2222</div>
+			<div class="div3">3333</div>
+		</div>
+	</body>
+</html>
